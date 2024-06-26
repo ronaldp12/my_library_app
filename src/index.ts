@@ -1,10 +1,28 @@
-/* Este fragmento de código utiliza una expresión de función de invocación inmediata (IIFE) en
-TypeScript. */
-(()=> {
-    /* El código declara una variable constante `myName` de tipo `string` con el valor ``Nicolas''. Luego,
-    registra el valor de la variable `myName` en la consola. Todo el código está incluido en una
-    expresión de función invocada inmediatamente (IIFE) en TypeScript, lo que significa que la función
-    se ejecuta inmediatamente después de definirse. */
-        const myName: string = 'Nicolas';
-        console.log(myName);
-    })();
+import { bookStore } from "./models/bookStore";
+import { Book } from "./models/book";
+import * as readline from 'readline';
+
+let Library=new bookStore();
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+
+function agregar():void {
+    rl.question('Ingrese el ISBN:', (ISBN) =>{
+        rl.question('Ingrese el titulo:', (titulo) =>{
+            rl.question('Ingrese el precio:', (precio) =>{
+                rl.question('Ingrese el genero:', (genero) =>{
+                    rl.question('Ingrese la descripcion:', (descripcion) =>{
+                        let libro_add=new Book(ISBN,titulo,parseInt(precio),genero,descripcion)
+                        Library.addBook(libro_add)
+                    })
+                })
+            })
+        })
+    } )
+    
+}
+agregar()
