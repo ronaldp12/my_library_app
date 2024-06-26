@@ -12,17 +12,17 @@ export class bookStore {
         console.log(`Libro '${book.titulo}' agregada a la biblioteca`)
     }
 
-    removeFilm(titulo: string): void{
-        const index =this.books.findIndex(book => book.titulo === titulo)
+    removeBook(ISBN: string): void{
+        const index =this.books.findIndex(book => book.ISBN === ISBN)
         if (index !==-1) {
             this.books.splice(index,1)
-            console.log(`Libro '${titulo}' eliminada de la biblioteca`)
+            console.log(`Libro '${ISBN}' eliminada de la biblioteca`)
         }else{
-            console.log(`Libro '${titulo}' no encontrado en la biblioteca`)
+            console.log(`Libro '${ISBN}' no encontrado en la biblioteca`)
         }
     }
 
-    listFilms():void{
+    listBooks():void{
         if (this.books.length ===0) {
             console.log("La biblioteca esta vacía")
         }else{
