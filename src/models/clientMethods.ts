@@ -24,9 +24,9 @@ export class clientMethods {
 
     listClients():void{
         if (this.clients.length ===0) {
-            console.log("La biblioteca esta vacía")
+            console.log("La biblioteca de clientes esta vacía")
         }else{
-            console.log("Clientes en la biblioteca")
+            console.log("Clientes Registrados")
             this.clients.forEach(client =>{
                 console.log(`-RUT: ${client.RUT}, Nombre: ${client.nombre}, Telefono: ${client.telefono}, Direccion: ${client.direccion}, Correo Electronico: ${client.correo_electronico}`)
             })

@@ -9,14 +9,14 @@ export class bookStore {
 
     addBook(book: Book): void {
         this.books.push(book);
-        console.log(`Libro '${book.titulo}' agregada a la biblioteca`)
+        console.log(`Libro '${book.titulo}' agregado a la biblioteca`)
     }
 
     removeBook(ISBN: string): void{
         const index =this.books.findIndex(book => book.ISBN === ISBN)
         if (index !==-1) {
             this.books.splice(index,1)
-            console.log(`Libro '${ISBN}' eliminada de la biblioteca`)
+            console.log(`Libro '${ISBN}' eliminado de la biblioteca`)
         }else{
             console.log(`Libro '${ISBN}' no encontrado en la biblioteca`)
         }

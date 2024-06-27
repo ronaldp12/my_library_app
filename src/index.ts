@@ -7,6 +7,22 @@ import { clientMethods } from "./models/clientMethods";
 let Library=new bookStore();
 let LibraryClient=new clientMethods();
 
+let libro1= new Book("123", "Rebelion en la granja", 23000, "Suspenso","Los animales de la granja de los Jones se sublevan contra sus dueños humanos y los vencen. Pero pronto surgen entre ellos rivalidades y envidias, y algunos se alían con los amos que derrocaron, traicionando su propia identidad y los intereses de su clase." )
+let libro2= new Book("124", "El resplandor", 45000, "Terror", "Un hombre acepta un trabajo como cuidador de un hotel en invierno, pero el aislamiento y la presencia sobrenatural del lugar comienzan a afectar su cordura.")
+let libro3= new Book("125", "La casa de los espiritus", 60000,"terror","La historia de la familia Trueba en un país latinoamericano imaginario, marcada por el amor y la tragedia.")
+
+Library.addBook(libro1)
+Library.addBook(libro2)
+Library.addBook(libro3)
+
+let cliente1=new Client("1090", "Juana Ortiz Perez", "321098762", "calle 23 #34-23", "juanita@gmail.com")
+let cliente2=new Client("1091", "Gonzalo Mendez Garcia", "3128763422", "calle 12 #09-12", "gonzalito@gmail.com")
+let cliente3=new Client("1092", "Jaime Castaño Escallon", "31323890467", "calle 21 #23-12", "jaimito@gmail.com")
+
+LibraryClient.addClient(cliente1)
+LibraryClient.addClient(cliente2)
+LibraryClient.addClient(cliente3)
+
 const ask = readline.createInterface({
     input: process.stdin,
     output: process.stdout
